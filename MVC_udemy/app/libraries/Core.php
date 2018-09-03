@@ -23,8 +23,13 @@ class Core
         $this->getUrl();
     }
 
-    public function getUrl(){
-        echo($_GET['url']);
+    public function getUrl()
+    {
+        if(isset($_GET['url'])){
+            $url = $_GET['url'];
+            $url = filter_var($url, FILTER_SANITIZE_URL);
+            var_dump($url);
+        }
     }
 }
 
