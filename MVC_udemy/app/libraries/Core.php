@@ -16,13 +16,12 @@ class Core
 {
     protected $currentController = 'Pages';
     protected $currentMethod = 'index';
-    protected $params = [];
+    protected $parameters = [];
 
 
     public function __construct()
     {
         $url = $this->getUrl();
-
         //Look in app/controllers for controller from
         //first $_GET['url'] array index.
         if(file_exists('../app/controllers/'. ucfirst($url[0]). '.php')){
@@ -32,14 +31,26 @@ class Core
             unset($url[0]);
         }
 
+        $controllerUrl = '../app/controllers/' . $this->currentController. '.php';
+
         // Require the controller
-        require_once '../app/controllers/' . $this->currentController. '.php';
+        require_once $controllerUrl;
 
         // Instatiant controller class
         $this->currentController = new $this->currentController;
 
-        // Check second index of $_GET['url'] for class methods
+        // Check second index of $_GET['url']
+        if(isset($url[1])){
+            // Check if method exists in controller
+           if(method_exists($this->currentController, $url[1])){
+               $this->currentMethod = $url[1];
+           }
+            unset($url[1]);
+        }
 
+        // Get Parameters
+        $this->parameters = $url ? array_values($url) : [];
+        var_dump($this->parameters);
     }
 
 

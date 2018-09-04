@@ -8,6 +8,8 @@
 
 class Pages
 {
-
+    public function about()
+    {
+        echo 'method about loaded';
+    }
 }
-echo 'Pages Controler';
