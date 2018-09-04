@@ -18,9 +18,28 @@ class Core
     protected $currentMethod = 'index';
     protected $params = [];
 
+
     public function __construct()
     {
-        var_dump($this->getUrl());
+        $url = $this->getUrl();
+
+        //Look in app/controllers for controller from
+        //first $_GET['url'] array index.
+        if(file_exists('../app/controllers/'. ucfirst($url[0]). '.php')){
+            //If exists, set as current
+            $this->currentController = ucfirst($url[0]);
+            //unset 0 index
+            unset($url[0]);
+        }
+
+        // Require the controller
+        require_once '../app/controllers/' . $this->currentController. '.php';
+
+        // Instatiant controller class
+        $this->currentController = new $this->currentController;
+
+        // Check second index of $_GET['url'] for class methods
+        if
     }
 
 
