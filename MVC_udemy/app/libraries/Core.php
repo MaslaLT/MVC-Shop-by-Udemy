@@ -39,7 +39,7 @@ class Core
         $this->currentController = new $this->currentController;
 
         // Check second index of $_GET['url'] for class methods
-        if
+
     }
 
 
