@@ -31,6 +31,7 @@ class Core
             unset($url[0]);
         }
 
+
         $controllerUrl = '../app/controllers/' . $this->currentController. '.php';
 
         // Require the controller
@@ -44,13 +45,15 @@ class Core
             // Check if method exists in controller
            if(method_exists($this->currentController, $url[1])){
                $this->currentMethod = $url[1];
+               unset($url[1]);
            }
-            unset($url[1]);
         }
 
         // Get Parameters
         $this->parameters = $url ? array_values($url) : [];
-        var_dump($this->parameters);
+
+        call_user_func_array([$this->currentController, $this->currentMethod], $this->parameters);
+
     }
 
 
