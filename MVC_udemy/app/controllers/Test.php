@@ -8,9 +8,9 @@
 
 class Test
 {
-    public function testMethod($id)
+    public function index()
     {
-        echo '<br> hdhasd' ."$id";
+        echo '<br> hdhasd' ."";
     }
 }
 echo 'Test controller';

@@ -19,6 +19,7 @@ class Core
     protected $parameters = [];
 
 
+
     public function __construct()
     {
         $url = $this->getUrl();
@@ -52,10 +53,17 @@ class Core
         // Get Parameters
         $this->parameters = $url ? array_values($url) : [];
 
+        // Call controllers method and send parameteres
         call_user_func_array([$this->currentController, $this->currentMethod], $this->parameters);
 
-    }
+        // EXAMPLE 2. Call controllers method and send parameteres
+//        $func = "Pages::$this->currentMethod";
+//        $func();
 
+        // EXAMPLE 3. Call controllers method and send parameteres
+//        $this->currentController->{$this->currentMethod}($this->parameters);
+
+    }
 
     public function getUrl(){
         if(isset($_GET['url'])){

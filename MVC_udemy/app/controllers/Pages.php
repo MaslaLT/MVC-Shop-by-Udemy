@@ -12,4 +12,10 @@ class Pages
     {
         echo 'method about loaded';
     }
+
+    public function index()
+    {
+        echo 'index page loaded';
+    }
 }
+
