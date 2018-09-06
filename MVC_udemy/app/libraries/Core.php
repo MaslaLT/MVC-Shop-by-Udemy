@@ -38,7 +38,7 @@ class Core
         // Require the controller
         require_once $controllerUrl;
 
-        // Instatiant controller class
+        // Instantiate controller class
         $this->currentController = new $this->currentController;
 
         // Check second index of $_GET['url']
@@ -46,6 +46,8 @@ class Core
             // Check if method exists in controller
            if(method_exists($this->currentController, $url[1])){
                $this->currentMethod = $url[1];
+
+               // Unset index[1]
                unset($url[1]);
            }
         }
@@ -53,15 +55,8 @@ class Core
         // Get Parameters
         $this->parameters = $url ? array_values($url) : [];
 
-        // Call controllers method and send parameteres
+        // Call controllers method and send parameters
         call_user_func_array([$this->currentController, $this->currentMethod], $this->parameters);
-
-        // EXAMPLE 2. Call controllers method and send parameteres
-//        $func = "Pages::$this->currentMethod";
-//        $func();
-
-        // EXAMPLE 3. Call controllers method and send parameteres
-//        $this->currentController->{$this->currentMethod}($this->parameters);
 
     }
 
@@ -75,5 +70,6 @@ class Core
 
         return false;
     }
+
 }
 
