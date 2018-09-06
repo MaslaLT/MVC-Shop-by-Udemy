@@ -2,7 +2,8 @@
 //Loading Config file
 require_once 'config/config.php';
 
-// Loading libraries
-require_once 'libraries/Core.php';
-require_once 'libraries/Controller.php';
-require_once 'libraries/Database.php';
+// Auto load core libraries
+spl_autoload_register(function($classNeme){
+    require_once 'libraries/' . $classNeme . '.php';
+    var_dump($classNeme);
+});
