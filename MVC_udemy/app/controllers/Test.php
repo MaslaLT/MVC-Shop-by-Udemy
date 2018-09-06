@@ -6,11 +6,10 @@
  * Time: 12:10
  */
 
-class Test
+class Test extends Controller
 {
     public function index()
     {
-        echo '<br> hdhasd' ."";
+
     }
 }
-echo 'Test controller';

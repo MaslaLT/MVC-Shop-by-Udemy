@@ -6,16 +6,16 @@
  * Time: 11:13
  */
 
-class Pages
+class Pages extends Controller
 {
     public function about()
     {
-        echo 'method about loaded';
+        $this->view('pages/about');
     }
 
     public function index()
     {
-        echo 'index page loaded';
+        $this->view('pages/index');
     }
 }
 
