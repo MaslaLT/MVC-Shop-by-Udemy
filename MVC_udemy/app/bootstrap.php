@@ -1,4 +1,6 @@
 <?php
+//Loading Config file
+require_once 'config/config.php';
 
 // Loading libraries
 require_once 'libraries/Core.php';
