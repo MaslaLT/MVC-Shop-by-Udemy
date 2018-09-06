@@ -29,7 +29,7 @@ class Controller
      */
     public function view($view, $data = [])
     {
-        $viewUrl = '../app/views/'. $view. '.php';
+        $viewUrl = '../app/views/'. $view. '.phtml';
 
         if(file_exists($viewUrl)){
             require_once ($viewUrl);
