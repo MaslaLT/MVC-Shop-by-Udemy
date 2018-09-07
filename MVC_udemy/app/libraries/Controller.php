@@ -23,6 +23,7 @@ class Controller
         return new $model();
     }
 
+
     /**
      * @param $view
      * @param array $data
@@ -36,5 +37,27 @@ class Controller
         } else {
             die('View dos not exists');
         }
+    }
+
+
+    /**
+     * Method require header template.
+     *
+     * @return
+     */
+    public function includeHeader()
+    {
+       return APPROOT . '\views\inc\header.phtml';
+    }
+
+
+    /**
+     * Method require footer template.
+     *
+     * @return mixed
+     */
+    public function includefooter()
+    {
+        return APPROOT . '\views\inc\footer.phtml';
     }
 }

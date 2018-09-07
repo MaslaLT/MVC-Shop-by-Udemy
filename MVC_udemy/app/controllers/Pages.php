@@ -15,7 +15,11 @@ class Pages extends Controller
 
     public function index()
     {
-        $this->view('pages/index');
+        $data =[
+            'title' => 'Main page'
+        ];
+
+        $this->view('pages/index', $data);
     }
 }
 

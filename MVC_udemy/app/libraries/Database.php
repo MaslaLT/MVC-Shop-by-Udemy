@@ -5,3 +5,5 @@
  * Date: 31/08/2018
  * Time: 10:01
  */
+
+$pdo = new PDO
