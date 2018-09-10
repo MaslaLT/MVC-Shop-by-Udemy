@@ -8,13 +8,13 @@
 
 class Pages extends Controller
 {
-    public function __construct()
-    {
-        $this->postMode = $this->model('Post');
-    }
 
     public function about()
     {
+        $data =[
+            'title' => 'About page'
+        ];
+
         $this->view('pages/about');
     }
 
