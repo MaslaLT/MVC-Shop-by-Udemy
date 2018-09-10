@@ -15,7 +15,7 @@ class Pages extends Controller
             'title' => 'About page'
         ];
 
-        $this->view('pages/about');
+        $this->view('pages/about', $data);
     }
 
     public function index()
@@ -26,5 +26,5 @@ class Pages extends Controller
 
         $this->view('pages/index', $data);
     }
-}
 
+}

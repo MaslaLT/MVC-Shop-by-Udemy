@@ -60,4 +60,9 @@ class Controller
     {
         return APPROOT . '\views\inc\footer.phtml';
     }
+
+    public function includeNavbar()
+    {
+        return APPROOT . '\views\inc\navbar.phtml';
+    }
 }
