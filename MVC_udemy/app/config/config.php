@@ -18,4 +18,7 @@ define('APPROOT', dirname(dirname(__FILE__)));
 define('URLROOT', 'http://localhost');
 
 //Site Name
-define('SITENAME', 'SharePost');
+define('SITENAME', 'A.Masel Portfolio');
+
+//App version
+define('APPVERSION', '0.1v');

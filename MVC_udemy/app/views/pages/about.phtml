@@ -1,5 +1,9 @@
-<?php require $this->includeHeader();?>
-<?php require $this->includeNavbar();?>
+<?php require APPROOT . '/views/inc/header.phtml' ;?>
+<?php require APPROOT . '/views/inc/navbar.phtml';?>
+<div class="container">
     <h1><?php echo $data['title']; ?></h1>
-<?php require $this->includeFooter();?>
+    <p><?php echo $data['description']; ?></p>
+    <p>version: <strong><?php echo APPVERSION?></strong></p>
+</div>
+<?php require APPROOT . '/views/inc/footer.phtml';?>
 

@@ -17,8 +17,8 @@ class Controller
      */
     public function model($model)
     {
-        $modelUrl = '../app/models/'. $model. '.php';
-        require_once ($modelUrl);
+        $modelUrl = '../app/models/' . $model . '.php';
+        require_once($modelUrl);
 
         return new $model();
     }
@@ -30,39 +30,12 @@ class Controller
      */
     public function view($view, $data = [])
     {
-        $viewUrl = '../app/views/'. $view. '.phtml';
+        $viewUrl = '../app/views/' . $view . '.phtml';
 
-        if(file_exists($viewUrl)){
-            require_once ($viewUrl);
+        if (file_exists($viewUrl)) {
+            require_once($viewUrl);
         } else {
             die('View dos not exists');
         }
-    }
-
-
-    /**
-     * Method require header template.
-     *
-     * @return
-     */
-    public function includeHeader()
-    {
-       return APPROOT . '\views\inc\header.phtml';
-    }
-
-
-    /**
-     * Method require footer template.
-     *
-     * @return mixed
-     */
-    public function includefooter()
-    {
-        return APPROOT . '\views\inc\footer.phtml';
-    }
-
-    public function includeNavbar()
-    {
-        return APPROOT . '\views\inc\navbar.phtml';
     }
 }
