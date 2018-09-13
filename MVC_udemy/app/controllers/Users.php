@@ -38,6 +38,21 @@ class Users extends Controller
 
     public function login()
     {
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            //Process login
+            echo 'LOGGING IN';
+        } else {
+            // Auto fill form after incorrect input.
+            $data=[
+                'title' => 'Log in. Artur Masel portfolio site',
+                'email' => '',
+                'password' => '',
+                'error_email' => '',
+                'error_password' => '',
+            ];
 
+            // Load view template
+            $this->view('users/login', $data);
+        }
     }
 }

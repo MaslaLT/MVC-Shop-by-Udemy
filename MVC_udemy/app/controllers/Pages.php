@@ -13,7 +13,7 @@ class Pages extends Controller
     {
         $data =[
             'title' => 'About page',
-            'description' => 'I am php junior developer. This site is made to show what I can do using OOP PHP'
+            'description' => 'I am php junior developer. This site is made to show what I can do using OOP PHP.'
         ];
 
         $this->view('pages/about', $data);
